@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 16:16:28 by jcardina          #+#    #+#             */
-/*   Updated: 2023/03/10 15:13:47 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/03/10 16:15:37 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 
 void	ft_putchar(char c);
+void	ft_format(va_list args, const char *str, int *nchar);
 
 #endif
 
