@@ -3,17 +3,19 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jacopo <jacopo@student.42.fr>              +#+  +:+       +#+         #
+#    By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/10 15:47:29 by jcardina          #+#    #+#              #
-#    Updated: 2023/03/11 21:28:38 by jacopo           ###   ########.fr        #
+#    Updated: 2023/03/13 12:36:07 by jcardina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
 SRCS = ft_printf.c\
-		utils.c\
+		ft_char.c\
+		ft_exa.c\
+		ft_number.c\
 
 CC = gcc
 

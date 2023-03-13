@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_exa.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/09 16:16:28 by jcardina          #+#    #+#             */
-/*   Updated: 2023/03/13 12:33:26 by jcardina         ###   ########.fr       */
+/*   Created: 2023/03/13 12:22:28 by jcardina          #+#    #+#             */
+/*   Updated: 2023/03/13 12:53:04 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF.H
-# define FT_PRINTF.H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include <unistd.h>
-
-void	ft_putchar(char c);
-void	ft_format(va_list args, const char *str, int *nchar);
-void	ft_exa(unsigned int nb);
-void	ft_exa(unsigned int nb);
-void	ft_putnbr_un(unsigned int);
-
-#endif
-
+void	ft_exa(unsigned int nb, const char format)
+{
+	if (nb >= 16)
+		ft_exa(nb / 16, format);
+	if (format == 'x')
+		ft_putchar("0123456789abcdef"[nb % 16]);
+	if (format == 'X')
+		ft_putchar("0123456789ABCDEF"[nb % 16]);
+}

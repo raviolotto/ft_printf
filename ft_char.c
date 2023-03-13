@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_char.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 15:34:22 by jcardina          #+#    #+#             */
-/*   Updated: 2023/03/10 15:40:08 by jcardina         ###   ########.fr       */
+/*   Created: 2023/03/13 12:14:30 by jcardina          #+#    #+#             */
+/*   Updated: 2023/03/13 12:23:02 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//il main per fare le prove
+#include "ft_printf.h"
 
-#include <stdio.h>
-
-int main(void)
+void	ft_putchar(char c)
 {
-	char *str = "qqqqqqqqqq";
-	char *bis = "bbbbbbb";
-	printf("test test %s %s", str, bis);
-	return (0);
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *str)
+{
+	int	i;
+
+	i = -1;
+	while (str[++i])
+		ft_putchar(str[i]);
 }
