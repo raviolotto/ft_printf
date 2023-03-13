@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 16:03:23 by jcardina          #+#    #+#             */
-/*   Updated: 2023/03/13 12:53:46 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/03/13 13:48:09 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	ft_format(va_list args, const char c, int *nchar)
 	if (c == 's')
 		ft_putstr(va_arg(args, char *));
 	if (c == 'p')
-
+		ft_putstr("0x");
+		ft_putptr(va_arg(args, unsigned long long));
 	if (c == 'd')
 		ft_putnbr(va_arg(args, int));
 	if (c == 'i')
@@ -41,6 +42,7 @@ int	ft_printf(const char *str, ...)
 	int	i;
 	int	nchar;
 
+	nchar = 0;
 	while (str[i])
 	{
 		if (str[i] == '%')
