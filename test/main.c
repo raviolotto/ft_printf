@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/09 16:29:53 by jcardina          #+#    #+#             */
-/*   Updated: 2023/03/13 11:46:27 by jcardina         ###   ########.fr       */
+/*   Created: 2023/03/13 11:24:24 by jcardina          #+#    #+#             */
+/*   Updated: 2023/03/13 11:45:39 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <unistd.h>
 
 void	ft_putchar(char c)
 {
@@ -30,12 +30,12 @@ void	ft_putnbr(int nb)
 {
 	if(nb == -2147483648)
 	{
-		ft_putstr("-2147483648")
+		ft_putstr("-2147483648");
 		return ;
 	}
 	if(nb < 0)
 	{
-		ft_putchar(-);
+		ft_putchar('-');
 		ft_putnbr(-nb);
 	}
 	if (nb > 9)
@@ -51,4 +51,12 @@ void	ft_exa(unsigned int nb)
 	ft_putchar("0123456789abcdef"[nb % 16]);
 }
 
+int	main(void)
+{
+	unsigned int i;
 
+	i = 188;
+
+	ft_exa(i);
+	return (0);
+}

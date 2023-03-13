@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jacopo <jacopo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 16:03:23 by jcardina          #+#    #+#             */
-/*   Updated: 2023/03/11 22:03:52 by jacopo           ###   ########.fr       */
+/*   Updated: 2023/03/13 11:08:09 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_format(va_list args, const char c, int *nchar)
 	if (c == 'X')
 
 	if (c == '%')
-
+		ft_putchar('%');
 	return ;
 }
 
