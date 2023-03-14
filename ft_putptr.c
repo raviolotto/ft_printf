@@ -3,16 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jacopo <jacopo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 13:41:24 by jcardina          #+#    #+#             */
-/*   Updated: 2023/03/13 13:47:06 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/03/14 17:30:53 by jacopo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_exa(unsigned long long ptr)
+#include "ft_printf.h"
+
+int	ft_putptr(unsigned long long ptr, int i)
 {
 	if (ptr >= 16)
-		ft_exa(ptr / 16, format);
+	{
+		i++;
+		i = ft_putptr(ptr / 16, i);
+	}
 	ft_putchar("0123456789abcdef"[ptr % 16]);
+	return(i);
 }

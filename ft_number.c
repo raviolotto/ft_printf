@@ -3,37 +3,47 @@
 /*                                                        :::      ::::::::   */
 /*   ft_number.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jacopo <jacopo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:13:56 by jcardina          #+#    #+#             */
-/*   Updated: 2023/03/13 12:47:00 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/03/14 19:14:03 by jacopo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr(int nb)
+int	ft_putnbr(int nb, int i)
 {
 	if (nb == -2147483648)
 	{
 		ft_putstr("-2147483648");
-		return ;
+		return (11);
 	}
-	if (nb < 0)
+	else if (nb < 0)
 	{
+		i++;
 		ft_putchar('-');
-		ft_putnbr(-nb);
+		i = ft_putnbr(-nb, i);
 	}
-	if (nb > 9)
-		ft_putnbr(nb / 10);
-	ft_putchar(nb % 10 + 48);
-	return ;
+	else
+	{
+		if (nb > 9)
+		{
+			i++;
+			i = ft_putnbr(nb / 10, i);
+		}
+		ft_putchar(nb % 10 + 48);
+	}
+	return (i);
 }
 
-void	ft_putnbr_un(unsigned int nb)
+int	ft_putnbr_un(unsigned int nb, int i)
 {
 	if (nb > 9)
-		ft_putnbr(nb / 10);
+	{
+		i++;
+		i = ft_putnbr_un(nb / 10, i);
+	}
 	ft_putchar(nb % 10 + 48);
-	return ;
+	return (i);
 }

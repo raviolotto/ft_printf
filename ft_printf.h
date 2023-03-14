@@ -3,24 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jacopo <jacopo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 16:16:28 by jcardina          #+#    #+#             */
-/*   Updated: 2023/03/13 12:33:26 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/03/14 17:31:08 by jacopo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF.H
-# define FT_PRINTF.H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdarg.h>
 # include <unistd.h>
+# include <stdio.h>
 
-void	ft_putchar(char c);
-void	ft_format(va_list args, const char *str, int *nchar);
-void	ft_exa(unsigned int nb);
-void	ft_exa(unsigned int nb);
-void	ft_putnbr_un(unsigned int);
+int		ft_printf(const char *str, ...);
+int		ft_putchar(char c);
+int		ft_putstr(char *str);
+int		ft_strlen(char *str);
+void	ft_format(va_list args, const char c, int *nchar);
+int		ft_exa(unsigned int nb, const char format, int i);
+int		ft_putnbr(int nb, int i);
+int		ft_putnbr_un(unsigned int nb, int i);
+int	ft_putptr(unsigned long long ptr, int i);
 
 #endif
 
