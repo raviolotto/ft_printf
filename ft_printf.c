@@ -6,7 +6,7 @@
 /*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 16:03:23 by jcardina          #+#    #+#             */
-/*   Updated: 2023/03/15 11:09:58 by jcardina         ###   ########.fr       */
+/*   Updated: 2023/03/15 11:36:13 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ void	ft_format(va_list args, const char c, int *nchar)
 		*nchar += ft_putnbr_un(va_arg(args, unsigned int), x);
 	if (c == 'x' || c == 'X')
 		*nchar += ft_exa(va_arg(args, unsigned int), c, x);
-	// if (c == 'X')
-	// 	*nchar += ft_exa(va_arg(args, unsigned int), c, x);
 	if (c == '%')
 		*nchar += ft_putchar('%');
 	return ;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jacopo <jacopo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 16:16:28 by jcardina          #+#    #+#             */
-/*   Updated: 2023/03/14 17:31:08 by jacopo           ###   ########.fr       */
+/*   Updated: 2023/03/15 11:36:52 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	ft_format(va_list args, const char c, int *nchar);
 int		ft_exa(unsigned int nb, const char format, int i);
 int		ft_putnbr(int nb, int i);
 int		ft_putnbr_un(unsigned int nb, int i);
-int	ft_putptr(unsigned long long ptr, int i);
+int		ft_putptr(unsigned long long ptr, int i);
 
 #endif
-
