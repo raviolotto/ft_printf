@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jacopo <jacopo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 16:03:23 by jcardina          #+#    #+#             */
-/*   Updated: 2023/03/14 19:15:40 by jacopo           ###   ########.fr       */
+/*   Updated: 2023/03/15 11:09:58 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,26 @@ void	ft_format(va_list args, const char c, int *nchar)
 
 	x = 1;
 	if (c == 'c')
-		nchar += ft_putchar(va_arg(args, int));
+		*nchar += ft_putchar(va_arg(args, int));
 	if (c == 's')
-		nchar += ft_putstr(va_arg(args, char *));
+		*nchar += ft_putstr(va_arg(args, char *));
 	if (c == 'p')
 	{
-		nchar += ft_putstr("0x");
-		nchar += ft_putptr(va_arg(args, unsigned long long), x);
+		*nchar += ft_putstr("0x");
+		*nchar += ft_putptr(va_arg(args, unsigned long long), x);
 	}
 	if (c == 'd')
-		nchar += ft_putnbr(va_arg(args, int), x);
+		*nchar += ft_putnbr(va_arg(args, int), x);
 	if (c == 'i')
-		nchar += ft_putnbr(va_arg(args, int), x);
+		*nchar += ft_putnbr(va_arg(args, int), x);
 	if (c == 'u')
-		nchar += ft_putnbr_un(va_arg(args, unsigned int), x);
-	if (c == 'x')
-		nchar += ft_exa(va_arg(args, unsigned int), c, x);
-	if (c == 'X')
-		nchar += ft_exa(va_arg(args, unsigned int), c, x);
+		*nchar += ft_putnbr_un(va_arg(args, unsigned int), x);
+	if (c == 'x' || c == 'X')
+		*nchar += ft_exa(va_arg(args, unsigned int), c, x);
+	// if (c == 'X')
+	// 	*nchar += ft_exa(va_arg(args, unsigned int), c, x);
 	if (c == '%')
-		nchar += ft_putchar('%');
+		*nchar += ft_putchar('%');
 	return ;
 }
 

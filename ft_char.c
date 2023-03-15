@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_char.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jacopo <jacopo@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcardina <jcardina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:14:30 by jcardina          #+#    #+#             */
-/*   Updated: 2023/03/14 15:39:20 by jacopo           ###   ########.fr       */
+/*   Updated: 2023/03/15 11:33:19 by jcardina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ int	ft_putstr(char *str)
 {
 	int	i;
 
+	if (str == NULL)
+	{
+		ft_putstr("(null)");
+		return (6);
+	}
 	i = -1;
 	while (str[++i])
 		ft_putchar(str[i]);
